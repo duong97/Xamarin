@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProductChecker.Views.ItemDetailPage"
+             Title="{Binding Title}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Lưu" Clicked="UpdateItem_Clicked"/>
+        <ToolbarItem Text="Xóa" Clicked="DeleteItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ScrollView>
+        <Grid Padding="10" Margin="5" StyleClass="detail-item-container">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+
+            <!--<Image Source="{Binding Item.Image}"
+                    WidthRequest="20"
+                    HeightRequest="20"
+                    Grid.ColumnSpan="2"
+                    Grid.Row="0"
+                    Grid.Column="0"/>-->
+
+            <Label Text="Tên:"
+                   Grid.Column="0"
+                   Grid.Row="0"/>
+            <Entry Text="{Binding Item.Name}"
+                   Grid.Column="1"
+                   Grid.Row="0"/>
+
+            <Label Text="Barcode:"
+                   Grid.Column="0"
+                   Grid.Row="1"/>
+            <Entry Text="{Binding Item.Barcode}"
+                   Grid.Column="1"
+                   Grid.Row="1"/>
+
+            <Label Text="Mô tả:"
+                   Grid.Column="0"
+                   Grid.Row="2"/>
+            <Entry Text="{Binding Item.Description}"
+                   Grid.Column="1"
+                   Grid.Row="2"/>
+
+            <Label Text="Giá:"
+                   Grid.Column="0"
+                   Grid.Row="3"/>
+            <Entry Text="{Binding Item.Price}"
+                   Grid.Column="1"
+                   Grid.Row="3"/>
+        </Grid>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,55 @@
+/* General (not class) */
+^contentpage {
+    background-color: white; /* background for all content page*/
+}
+navigationpage {
+    -xf-bar-background-color: #0ca852; /* background for navigation*/
+	color: white;
+}
+
+/* Chung */
+.homepage-item-container, .iec-item-container, .list-item-container, .detail-item-container{ /* Container */
+	background-color: #dfdfdf;
+}
+.title-item-container, .iec-item-title, .list-item-title, .about-title{ /* Title */
+	color: black;
+	font-style: bold;
+	font-size: 16;
+}
+.homepage-item-container > label, .iec-item-detail, .list-item-detail, .about-detail{ /* Detail */
+	color: #3e3e3e;
+	font-size: 13;
+}
+/* CRUD page */
+.detail-item-container label, 
+.detail-item-container entry, 
+.history-detail-container label, 
+.history-detail-container entry,
+.new-iec-container label,
+.new-iec-container entry,
+.new-item-container label,
+.new-item-container entry,
+.seting-label{
+	color: black;
+}
+
+/* Left menu (left swipe) */
+.left-menu-container{
+	background-color: #f3f3f3;
+}
+.left-menu-label{
+	color: black;
+	font-size: 16;
+}
+
+/* ListItemPage, price label */
+.price{
+	color: #fe6436;
+	font-style: bold;
+}
+
+/* Scan button*/
+.btn-scan{
+	background-color: black;
+	color: white;
+}

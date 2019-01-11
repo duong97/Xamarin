@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProductChecker.Views.SettingPage"
+             Title="Cài đặt">
+    <ContentPage.Content>
+        <Grid Padding="10" Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Giao diện tối"
+                   StyleClass="seting-label"
+                   Grid.Column="0"
+                   Grid.Row="0"/>
+            <Switch OnColor="Orange"
+                    x:Name="settingDarkTheme"
+                    Toggled="SettingDarkTheme_Toggled"
+                    Grid.Column="1"
+                    Grid.Row="0"/>
+
+            <Label Text="Kiểu biểu đồ"
+                   StyleClass="seting-label"
+                   Grid.Column="0"
+                   Grid.Row="1"/>
+            <Picker Title="Choose" 
+                    x:Name="picker"
+                    SelectedIndexChanged="picker_SelectedIndexChanged"
+                    BackgroundColor="White"
+                    Grid.Column="1"
+                    Grid.Row="1"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

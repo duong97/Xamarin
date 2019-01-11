@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProductChecker.Views.IECPage"
+             Title="{Binding PageTitle}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Thêm" Clicked="AddImport_Clicked">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="add.png"/>
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+            <StackLayout>
+                <ListView x:Name="HistoryListView"
+                            ItemsSource="{Binding Htr}"
+                            VerticalOptions="FillAndExpand"
+                            HasUnevenRows="true"
+                            RefreshCommand="{Binding LoadItemsCommand}"
+                          IsPullToRefreshEnabled="true"
+                          IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                          CachingStrategy="RecycleElement"
+                            ItemSelected="OnItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="10" Margin="5" StyleClass="iec-item-container">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto" />
+                                        <ColumnDefinition Width="auto" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Text="Tên: " 
+                                           Grid.Row="0" 
+                                           Grid.Column="0"
+                                           StyleClass="title-item-container"/>
+                                    <Label Text="{Binding ItemName}" 
+                                           Grid.Row="0" 
+                                           Grid.Column="1" 
+                                           StyleClass="title-item-container"/>
+
+                                    <Label Text="Số lượng: " Grid.Row="1" Grid.Column="0" StyleClass="iec-item-detail"/>
+                                    <Label Text="{Binding Amount}" Grid.Row="1" Grid.Column="1" StyleClass="iec-item-detail"/>
+
+                                    <Label Text="Ngày: " Grid.Row="2" Grid.Column="0" StyleClass="iec-item-detail"/>
+                                    <Label Text="{Binding Date}" Grid.Row="2" Grid.Column="1" StyleClass="iec-item-detail"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

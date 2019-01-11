@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProductChecker.Views.NewItemPage"
+             Title="Thêm mới">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Hủy" Clicked="Cancel_Clicked">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="cancel.png"/>
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        <ToolbarItem Text="Lưu" Clicked="Save_Clicked">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="save.png"/>
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="20" Padding="15" StyleClass="new-item-container">
+                <Label Text="Mã vạch" FontSize="Medium" />
+                <Entry Text="{Binding Item.Barcode}" 
+                       FontSize="Small" 
+                       x:Name="barcodeEntry"/>
+                <Button Text="Scan"
+                        x:Name="scanBtn"
+                        Clicked="ScanBtn_Clicked"
+                        StyleClass="btn-scan"/>
+
+                <Label Text="Tên" FontSize="Medium" />
+                <Entry Text="{Binding Item.Name}" 
+                       FontSize="Small" />
+            
+                <Label Text="Mô tả" FontSize="Medium" />
+                <Editor Text="{Binding Item.Description}" 
+                        FontSize="Small" 
+                        Margin="0" />
+
+                <Label Text="Giá" FontSize="Medium" />
+                <Entry Text="{Binding Item.Price}" 
+                       FontSize="Small" 
+                       Keyboard="Numeric"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

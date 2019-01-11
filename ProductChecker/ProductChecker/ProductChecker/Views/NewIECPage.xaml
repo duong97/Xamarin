@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProductChecker.Views.NewIECPage"
+             Title="{Binding PageTitle}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Hủy" Clicked="Cancel_Clicked">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="cancel.png"/>
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        <ToolbarItem Text="Lưu" Clicked="Save_Clicked">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="save.png"/>
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="20" Padding="15" StyleClass="new-iec-container">
+                <Picker Title="Chọn sản phẩm" 
+                        ItemsSource="{Binding Items}" 
+                        ItemDisplayBinding="{Binding Name}"
+                        x:Name="picker"
+                        SelectedIndexChanged="picker_SelectedIndexChanged"
+                        BackgroundColor="White"/>
+
+                <Label Text="Mã vạch" FontSize="Medium" />
+                <Label Text="{Binding Htr.ItemBarcode}"
+                        FontSize="Small" 
+                        x:Name="barcodeTxt"/>
+                <Button Text="Scan"
+                        x:Name="scanBtn"
+                        Clicked="ScanBtn_Clicked"
+                        StyleClass="btn-scan"/>
+
+                <Label Text="Số lượng" FontSize="Medium" />
+                <Entry Text="{Binding Htr.Amount}" 
+                    FontSize="Small"
+                    Keyboard="Numeric"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

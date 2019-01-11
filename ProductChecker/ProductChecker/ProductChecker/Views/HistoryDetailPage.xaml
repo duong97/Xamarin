@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProductChecker.Views.HistoryDetailPage"
+             Title="Chi tiết">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Lưu" Clicked="UpdateItem_Clicked"/>
+        <ToolbarItem Text="Xóa" Clicked="DeleteItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ScrollView>
+        <StackLayout Spacing="20" Padding="15" StyleClass="history-detail-container">
+            <Label Text="ID:" FontSize="Medium" FontAttributes="Bold"/>
+            <Label Text="{Binding Item.Id}" FontSize="Small"/>
+
+            <Label Text="Tên:" FontSize="Medium"  FontAttributes="Bold"/>
+            <Label Text="{Binding Item.ItemName}" FontSize="Small"/>
+
+            <Label Text="Barcode:" FontSize="Medium"  FontAttributes="Bold"/>
+            <Label Text="{Binding Item.ItemBarcode}" FontSize="Small"/>
+
+            <Label Text="Số lượng:" FontSize="Medium"  FontAttributes="Bold"/>
+            <Entry Text="{Binding Item.Amount}" FontSize="Small"/>
+            
+            <Label Text="Loại:" FontSize="Medium"  FontAttributes="Bold"/>
+            <Entry Text="{Binding Item.Type}" FontSize="Small"/>
+
+            <Label Text="Ngày:" FontSize="Medium"  FontAttributes="Bold"/>
+            <Label Text="{Binding Item.Date}" FontSize="Small"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

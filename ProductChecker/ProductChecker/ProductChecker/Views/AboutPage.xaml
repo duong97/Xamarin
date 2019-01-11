@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProductChecker.Views.AboutPage"
+             xmlns:vm="clr-namespace:ProductChecker.ViewModels"
+             Title="About">
+
+    <ScrollView>
+        <StackLayout Padding="10" Margin="5">
+            <Label Text="Dev Team"
+                   StyleClass="about-title"/>
+            <Label Text="Nguyễn Văn Đương 15520154"
+                   StyleClass="about-detail"/>
+            <Label Text="Lương Vĩnh Hùng 15520276"
+                   StyleClass="about-detail"/>
+            <Label Text="Trần Đình Dương 15520151"
+                   StyleClass="about-detail"/>
+
+            <Label Text="Project Name:"
+                   StyleClass="about-title"/>
+            <Label Text="Xây dựng ứng dụng quản lý kho hàng"
+                   StyleClass="about-detail"/>
+            
+            <Label Text="Class:"
+                   StyleClass="about-title"/>
+            <Label Text="IE307.J11"
+                   StyleClass="about-detail"/>
+            
+            <Label Text="Lecturer:"
+                   StyleClass="about-title"/>
+            <Label Text="Võ Ngọc Tân (Theory)"
+                   StyleClass="about-detail"/>
+            <Label Text="Võ Tấn Khoa (Practice)"
+                   StyleClass="about-detail"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
