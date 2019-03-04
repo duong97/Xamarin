@@ -1,1 +1,1 @@
-Some screenshots of th
+Some screenshots of this app.
